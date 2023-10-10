@@ -1,0 +1,83 @@
+---
+_subdirectory: >-
+  {%- if project_language == 'Julia' -%}
+  julia_template
+  {%- elif project_language == 'Python' -%}
+  python_template
+  {%- elif project_language == 'Rust' -%}
+  rust_template
+  {%- elif project_language == 'Solidity' -%}
+  solidity_template
+  {%- endif -%}
+
+_min_copier_version: "8.0.0"
+_skip_if_exists:
+    - README.rst
+
+project_language:
+  help: 'Language this project will be in:'
+  choices:
+    - Julia
+    - Python
+    - Rust
+    - Solidity
+  type: str
+
+project_type:
+  help: 'General type of the project:'
+  choices:
+    - Module
+    - Executable
+  type: str
+
+project_public:
+  help: 'This project is intended to be public'
+  default: no
+  type: bool
+
+project_name: 
+  default: "{{ project_language }}-Boilerplate"
+  help: 'Name for this project.'
+  validator: >-
+      {% if not (project_name | regex_search('^(?![\.\-\_\ ])([A-Za-z0-9\ \-\_\.])+(?<![\.\-\_\ ])')) %}
+        Must only contain ASCII letters/digits, spaces, underscores, hyphens, and periods, and must begin and end with ASCII letters/digits
+      {% endif %}
+  type: str
+
+project_description:
+  default: 'A {{ project_language }} project.'
+  help: 'Brief description for the {{ base_language }} project:'
+  type: str
+
+author_name:
+  default: 'SpeakinTelnet'
+  help: 'Name of the author:'
+  type: str
+
+author_email: 
+  default: 'gui.lac@protonmail.com'
+  help: 'Email of the author:'
+  type: str
+
+repository_provider:
+  default: 'codeberg.org'
+  help: 'Host for the remote repository:'
+  type: str
+
+repository_namespace:
+  default: '{{ author_name }}'
+  help: 'Owner of the remote repository:'
+  type: str
+
+repo_url:
+  default: 'https://{{ repository_provider }}/{{ repository_namespace }}/{{ project_name|lower|replace(" ", "_") }}'
+  help: 'Full url for the remote repository:'
+  type: str
+
+license_date:
+  default: '2023'
+  help: 'Provide the date or date range for the license'
+  type: str
+
+---
+!include copier_python.yaml

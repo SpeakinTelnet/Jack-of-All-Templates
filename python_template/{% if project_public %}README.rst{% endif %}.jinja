@@ -1,0 +1,102 @@
+{{ project_name }}
+======================================================================
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+
+.. image:: https://img.shields.io/endpoint?url={{ repo_url }}/_static/badges/coverage.json
+   :target: {{ repo_url }}/main/reports/coverage
+
+.. image:: https://img.shields.io/github/license/{{ repo_namespace }}/{{ project_name }}
+   :target: {{ repo_url }}/main/blob/main/LICENSE
+
+.. image:: {{ repo_url }}/main/actions/workflows/ci.yml/badge.svg
+   :target: {{ repo_url }}/main/actions/workflows/ci.yml
+
+.. image:: {{ repo_url }}/main/actions/workflows/release.yml/badge.svg
+   :target: {{ repo_url }}/main/actions/workflows/release.yml
+
+.. image:: {{ repo_url }}/main/badges/main/pipeline.svg
+   :target: {{ repo_url }}/-/commits/main
+
+
+{{ project_description }}
+
+Installation
+------------
+
+.. readme-install-start
+
+{{ project_name }} can be installed using ``pip`` as follows:
+
+.. code-block:: console
+
+   $ pip install {{ project_name }}
+
+.. readme-install-end
+
+
+Usage
+-----
+
+
+{% if include_sphinx %}
+Refer to the `full documentation <https://{{ project_name }}.readthedocs.io>`_ for the in-depth usage.
+{% endif %}
+
+
+.. readme-usage-start
+
+Prerequisite
+************
+
+* TODO
+
+Basic Usage
+***********
+
+* TODO
+
+.. readme-usage-end
+
+Donate 
+------
+
+.. readme-donate-start
+
+I made this has a fun side project and it's free for anyone to use.
+If you like it and wish to donate here's a few of my crypto wallets. 
+
+.. _tbl-grid:
+
++----------------------------------------+--------------------------------------+-----------------------------------------+
+| Ethereum and L2s (0x29006...)          | Monero (85tBS7YSrM5...)              | Peercoin (PBzj1ZwMDW...)                |
+|                                        |                                      |                                         |
++========================================+======================================+=========================================+
+| |EthereumQR|                           | |MoneroQR|                           | |PeercoinQR|                            |
++----------------------------------------+--------------------------------------+-----------------------------------------+
+
+
+.. |EthereumQR| image:: {{ repo_url }}/main/docs/_qrcodes/ethereum.png
+  :width: 300
+  :alt: EthereumQR
+
+.. |MoneroQR| image:: {{ repo_url }}/main/docs/_qrcodes/monero.png
+  :width: 300
+  :alt: MoneroQR
+
+.. |PeercoinQR| image:: {{ repo_url }}/main/docs/_qrcodes/peercoin.png
+  :width: 300
+  :alt: PeerCoinQR
+
+.. readme-donate-end
+
+* Free software: MIT
+* Documentation: https://{{ project_name }}.readthedocs.io.
+
+Credits
+-------
+
+* TODO
+
+⊂(▀¯▀⊂)
