@@ -1,0 +1,25 @@
+---
+
+julia_include_docs:
+  help: Include a directory and dependencies for documenter?
+  type: bool
+  default: yes
+  when: "{{ project_language == 'Julia' }}"
+
+julia_module_name:
+  default: '{{ project_name|lower|replace(".jl", "")|replace("-","_")|replace(" ","_")|replace(".","") }}'
+  help: >-
+    Provide the module name for this project, in Julia this could translate to what's
+    used in <]Add Module>
+  validator: >-
+      {% if not (julia_module_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
+        Must be composed of these characters: (a-z, 0-9, _).
+      {% endif %}
+  type: str
+  when: "{{ project_language == 'Julia' }}"
+
+julia_project_uuid:
+  default: "{% from pathjoin('includes', 'name-slug.jinja') import uuid4 -%}{{ uuid4() }}"
+  help: UUID for the project, do not change unless you already generated one.
+  type: str
+  when: "{{ project_language == 'Julia' }}"

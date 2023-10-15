@@ -7,7 +7,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 
-import {{ module_name }}
+import {{ python_module_name }}
 
 # -- Project configuration ---------------------------------------------
 
@@ -16,9 +16,9 @@ copyright = "{{ license_date }}, {{ author_name }}"
 author = "{{ author_name }}"
 
 # The short X.Y version.
-version = {{ module_name }}.__version__
+version = {{ python_module_name }}.__version__
 # The full version, including alpha/beta/rc tags.
-release = {{ module_name }}.__version__
+release = {{ python_module_name }}.__version__
 
 
 # -- Extensions configuration ---------------------------------------------

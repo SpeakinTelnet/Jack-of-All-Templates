@@ -1,24 +1,24 @@
 ---
 
-include_sphinx:
+python_include_docs:
   help: Include a directory for sphinx?
   type: bool
   default: yes
   when: "{{ project_language == 'Python' }}"
 
-include_brownie:
+python_include_brownie:
   help: Include the directories for brownie blockchain development suite?
   type: bool
   default: no
   when: "{{ project_language == 'Python' }}"
 
-module_name:
+python_module_name:
   default: '{{ project_name|lower|replace("-","_")|replace(" ","_")|replace(".","") }}'
   help: >-
     Provide the module name for this project, in python this could translate to what's
     used in <pip install ...> (a-z, 0-9, _)
   validator: >-
-      {% if not (module_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
+      {% if not (python_module_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
         Must be composed of these characters: (a-z, 0-9, _).
       {% endif %}
   type: str

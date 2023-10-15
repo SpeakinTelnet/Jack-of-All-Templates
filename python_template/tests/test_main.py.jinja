@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """Tests for `{{ project_name }}` package."""
 
-from {{ module_name }} import hello_world
+from {{ python_module_name }} import hello_world
 
 
 def test_hello_world():
     """Test for hello world."""
-    assert hello_world() == "hello from {{ module_name }}"
+    assert hello_world() == "hello from {{ python_module_name }}"

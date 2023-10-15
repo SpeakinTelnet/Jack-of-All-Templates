@@ -33,8 +33,8 @@ nox will run:
 .. code-block:: console
     
     $ pytest # Test suite
-    $ black {{ module_name }} tests noxfile.py # Linting
-    $ flake8 {{ module_name }} tests noxfile.py # General fomarting check
+    $ black {{ python_module_name }} tests noxfile.py # Linting
+    $ flake8 {{ python_module_name }} tests noxfile.py # General fomarting check
     $ sphinx-build -W -b html -v docs/ docs/_build/html # Regenerate the docs
 
 Deploying

@@ -40,7 +40,7 @@ Usage
 -----
 
 
-{% if include_sphinx %}
+{% if python_include_docs %}
 Refer to the `full documentation <https://{{ project_name }}.readthedocs.io>`_ for the in-depth usage.
 {% endif %}
 
@@ -92,7 +92,7 @@ If you like it and wish to donate here's a few of my crypto wallets.
 .. readme-donate-end
 
 * Free software: MIT
-* Documentation: https://{{ project_name }}.readthedocs.io.
+{% if python_include_docs %}* Documentation: https://{{ project_name }}.readthedocs.io.{% endif %}
 
 Credits
 -------

@@ -23,20 +23,8 @@ project_language:
     - Solidity
   type: str
 
-project_type:
-  help: 'General type of the project:'
-  choices:
-    - Module
-    - Executable
-  type: str
-
-project_public:
-  help: 'This project is intended to be public'
-  default: no
-  type: bool
-
 project_name: 
-  default: "{{ project_language }}-Boilerplate"
+  default: "{{ project_language }}{% if project_language == 'Julia' %}.jl{% else %}-Boilerplate{% endif %}"
   help: 'Name for this project.'
   validator: >-
       {% if not (project_name | regex_search('^(?![\.\-\_\ ])([A-Za-z0-9\ \-\_\.])+(?<![\.\-\_\ ])')) %}
@@ -46,7 +34,7 @@ project_name:
 
 project_description:
   default: 'A {{ project_language }} project.'
-  help: 'Brief description for the {{ base_language }} project:'
+  help: 'Brief description for the {{ project_name }} project:'
   type: str
 
 author_name:
@@ -80,4 +68,15 @@ license_date:
   type: str
 
 ---
+!include copier_julia.yaml
+
+---
 !include copier_python.yaml
+
+##
+##---
+##!include copier_rust.yaml
+##
+##---
+##!include copier_solidity.yaml
+##

@@ -1,0 +1,20 @@
+using {{ julia_module_name }}
+using Documenter
+
+DocMeta.setdocmeta!({{ julia_module_name }}, :DocTestSetup, :(using {{ julia_module_name }}); recursive=true)
+
+makedocs(;
+    modules=[{{ julia_module_name }}],
+    authors="{{ author_name }} <{{ author_email }}>",
+    repo="{{ repo_url }}/blob/\{commit\}\{path\}#\{line\}",
+    sitename="{{ project_name }}",
+    format=Documenter.HTML(;
+        prettyurls=get(ENV, "CI", "false") == "true",
+        canonical="{{ repo_url }}",
+        edit_link="main",
+        assets=String[],
+    ),
+    pages=["Home" => "index.md"],
+)
+
+# deploydocs(; repo="{{ repo_url }}", devbranch="main")

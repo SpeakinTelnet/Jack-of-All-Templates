@@ -1,0 +1,7 @@
+using {{ julia_module_name }}
+using Test
+
+@testset "Testset 1" begin
+    @test "hello from {{ julia_module_name }}" == greet()
+    @test_throws MethodError greet("Antonia")
+end

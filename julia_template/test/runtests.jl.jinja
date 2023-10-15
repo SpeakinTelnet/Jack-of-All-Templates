@@ -1,0 +1,8 @@
+using {{ julia_module_name }}
+using Test
+
+@testset "Example tests" begin
+    @testset "Basic Tests" begin
+        include("{{ julia_module_name }}_tests.jl")
+    end
+end
