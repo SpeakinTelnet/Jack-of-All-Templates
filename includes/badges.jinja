@@ -1,0 +1,55 @@
+{% macro mit_shield() -%}
+.. |mit-shields| image:: https://badgen.net/static/license/MIT/blue
+    :target: {{ repo_url }}src/branch/main/LICENSE
+    :alt: MIT
+{%- endmacro %}
+
+{% macro python_shield() -%}
+.. |python-shield| image:: https://badgen.net/badge/Made%20with/%20Python/blue
+   :target: https://www.python.org/
+{%- endmacro %}
+
+{% macro rust_shield() -%}
+.. |rust-shield| image:: https://badgen.net/badge/Made%20with/%20Rust/black
+   :target: https://www.rust-lang.org/
+{%- endmacro %}
+
+{% macro julia_shield() -%}
+.. |julia-shield| image:: https://badgen.net/badge/Made%20with/%20Julia/green
+   :target: https://julialang.org/
+{%- endmacro %}
+
+{% macro solidity_shield() -%}
+.. |solidity-shield| image:: https://badgen.net/badge/Made%20with/Solidity/purple
+   :target: https://soliditylang.org/
+{%- endmacro %}
+
+{% macro readthedocs_shield() -%}
+.. |readthedocs-shield| image:: https://readthedocs.org/projects/{{ project_name }}/badge/?version=latest
+   :target: http://{{ project_name }}.readthedocs.io/?badge=latest
+{%- endmacro %}
+
+{% macro ruff_shield() -%}
+.. |Ruff-shield| image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
+    :target: https://github.com/astral-sh/ruff
+{%- endmacro %}
+
+{% macro black_shield() -%}
+.. |black-shield| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+{%- endmacro %}
+
+{% macro isort_shield() -%}
+.. |isort-shield| image:: https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336
+    :target: https://pycqa.github.io/isort/
+{%- endmacro %}
+
+{% macro juliadoc_shield() -%}
+.. |juliadoc-shield| image:: https://badgen.net/badge/docs/stable/blue
+    :target: {{ repo_url }}
+{%- endmacro %}
+
+{% macro bluestyle_shield() -%}
+.. |bluestyle-shield| image:: https://badgen.net/badge/Codestyle/Blue/blue
+    :target: https://github.com/invenia/BlueStyle
+{%- endmacro %}

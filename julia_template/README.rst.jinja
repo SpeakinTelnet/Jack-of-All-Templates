@@ -1,20 +1,24 @@
+{% from pathjoin("includes", "badges.jinja") import mit_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import julia_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import bluestyle_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import juliadoc_shield with context -%}
 
-{% from pathjoin("includes", "name-slug.jinja") import repo_url with context -%}
+| |mit-shield| |julia-shield| |bluestyle-shield| {% if julia_include_docs %}|juliadoc-shield|{% endif %}
+
+{{ mit_shield() }}
+
+{{ julia_shield() }}
+
+{{ bluestyle_shield() }}
+
+{% if julia_include_docs %}{{ juliadoc_shield() }}{% endif %}
 
 {{ project_name }}
 ======================================================================
 
-.. image:: https://img.shields.io/badge/code%20style-blue-4495d1.svg
-   :target: https://github.com/invenia/BlueStyle
-
-{% if include_docs %}
-
-.. image:: https://img.shields.io/badge/docs-stable-blue.svg
-   :target: https://{{ repo_namespace }}.codeberg.org/{{ repo_name }}/stable/
-
-{% endif %}
-
 {{ project_description }}
+
+{% if julia_include_docs %}Documentation: https://{{ repository_namespace }}.codeberg.org/{{ project_name }}/stable/{% endif %}
 
 Installation
 ------------

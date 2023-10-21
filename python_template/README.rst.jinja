@@ -1,26 +1,32 @@
+{% from pathjoin("includes", "badges.jinja") import mit_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import python_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import ruff_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import black_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import isort_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import readthedocs_shield with context -%}
+
+| |mit-shield| |python-shield| |ruff-shield|
+| |black_shield| |isort_shield| {% if python_include_docs %}|readthedocs_shield|{% endif %}
+
+{{ mit_shield() }}
+
+{{ python_shield() }}
+
+{{ ruff_shield() }}
+
+{{ black_shield() }}
+
+{{ isort_shield() }}
+
+{% if python_include_docs %}{{ readthedocs_shield() }}{% endif %}
+
+
 {{ project_name }}
 ======================================================================
 
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
-
-.. image:: https://img.shields.io/endpoint?url={{ repo_url }}/_static/badges/coverage.json
-   :target: {{ repo_url }}/main/reports/coverage
-
-.. image:: https://img.shields.io/github/license/{{ repo_namespace }}/{{ project_name }}
-   :target: {{ repo_url }}/main/blob/main/LICENSE
-
-.. image:: {{ repo_url }}/main/actions/workflows/ci.yml/badge.svg
-   :target: {{ repo_url }}/main/actions/workflows/ci.yml
-
-.. image:: {{ repo_url }}/main/actions/workflows/release.yml/badge.svg
-   :target: {{ repo_url }}/main/actions/workflows/release.yml
-
-.. image:: {{ repo_url }}/main/badges/main/pipeline.svg
-   :target: {{ repo_url }}/-/commits/main
-
-
 {{ project_description }}
+
+{% if python_include_docs %}Documentation: https://{{ project_name }}.readthedocs.io.{% endif %}
 
 Installation
 ------------
