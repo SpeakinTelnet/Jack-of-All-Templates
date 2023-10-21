@@ -1,7 +1,3 @@
-{% macro repo_url() -%}
-https://{{ repository_provider }}/{{ repository_namespace }}/{{ project_name|lower|replace(" ", "_") }}
-{%- endmacro %}
-
 {% macro uuid4() -%}
 {%- set ns = namespace(uuid = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx') %}
 {%- set ns.new_uuid = '' %}
