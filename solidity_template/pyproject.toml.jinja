@@ -1,0 +1,134 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{ project_name|replace(" ", "_") }}"
+version = "0.1.0" 
+description = "{{ project_description }}"
+readme = "README.rst"
+requires-python = ">=3.8, <3.10"
+license = "MIT"
+keywords = []
+authors = [
+  {name = "{{ author_name }}", email = "{{ author_email }}"}
+  ]
+maintainers = [
+  {name = "{{ author_name }}", email = "{{ author_email }}"}
+  ]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+  "pytest >= 6.2.5",
+  "eth-brownie >= 1.19"
+]
+
+[tool.hatch.envs.test]
+features = ["test"]
+[tool.hatch.envs.test.scripts]
+test = "python -m pytest -vv {args}"
+nowarn = "test -W default {args}"
+[[tool.hatch.envs.test.matrix]]
+python = ["3.8", "3.9"]
+
+[tool.hatch.envs.lint]
+detached = true
+dependencies = [
+  "black>=23.9.0",
+  "ruff>=0.0.292",
+]
+[tool.hatch.envs.lint.scripts]
+style = [
+  "ruff {args:.}",
+  "black --check --diff {args:.}",
+]
+fmt = [
+  "black {args:.}",
+  "ruff --fix {args:.}",
+]
+
+[tool.hatch.envs.deploy]
+detached = true
+dependencies = [
+  "web3 >= 6.0.0",
+  "py-solc-x >= 1.1.0",
+  "python_dotenv >= 1.0.0"
+]
+[tool.hatch.envs.deploy.scripts]
+token = [
+  "python scripts/deploy_token.py"
+]
+
+[project.urls]
+homepage = "{{ repo_url }}"
+repository = "{{ repo_url }}.git"
+
+[tool.black]
+line-length = 90
+
+[tool.ruff]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+# "UP" "TRY" "PLR"
+select = ["E", "W", "F", "I", "N", "B", "BLE", "C", "D", "E", "F", "I", "N", "S", "T", "W", "RUF", "NPY", "PD", "PGH", "ANN", "C90", "PLC", "PLE", "PLW", "TCH"]
+ignore = [
+    "ANN002", "ANN003", "ANN101", "ANN102", "ANN204", "ANN401",
+    "S101", "S104",
+    "D105", "D106", "D107", "D200", "D212", "D415",
+    "PD011",
+    "PLW1510",
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["E", "W", "F", "I", "N", "B", "BLE", "C", "D", "E", "F", "I", "N", "S", "T", "W", "RUF", "NPY", "PD", "PGH", "ANN", "C90", "PL", "PLC", "PLE", "PLW", "TCH"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Same as Black.
+line-length = 90
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+typing-modules = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
+
+[tool.ruff.per-file-ignores]
+"tests/*" = ["D103", "S101", "PLR0913", "PLR0915", "PGH003", "ANN001", "ANN202", "ANN201", "PLR0912", "TRY301", "PLW0603", "PLR2004", "ANN101", "S106", "TRY201", "ANN003", "ANN002", "S105", "TRY003"]
+"scripts/*" = ["T201"]
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[tool.ruff.isort]
+order-by-type = true
+
+[tool.ruff.pydocstyle]
+convention = "numpy"

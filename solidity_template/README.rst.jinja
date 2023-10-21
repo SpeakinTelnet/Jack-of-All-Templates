@@ -1,0 +1,22 @@
+{% from pathjoin("includes", "badges.jinja") import mit_shield with context -%}
+{% from pathjoin("includes", "badges.jinja") import solidity_shield with context -%}
+
+| |mit-shield| |solidity-shield| 
+
+{{ mit_shield() }}
+
+{{ solidity_shield() }}
+
+{{ project_name }}
+======================================================================
+
+{{ project_description }}
+
+
+License
+-------
+
+This project is licensed under the `MIT License <{{ repo_url }}/src/branch/main/LICENSE>`_
+
+
+⊂(▀¯▀⊂)  `Donate <https://codeberg.org/SpeakinTelnet/.profile/src/branch/main/DONATE.rst>`_
