@@ -2,6 +2,7 @@
 
 rust_targets:
   help: what is the main target of the rust package
+  default: "Library"
   choices:
     - Library
     - Binary
