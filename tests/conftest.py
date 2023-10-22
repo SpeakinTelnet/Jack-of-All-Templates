@@ -68,3 +68,21 @@ def python_base_answers():
         "python_module_name": "python_test",
     }
 
+
+@pytest.fixture
+def julia_base_answers():
+    return {
+        "project_language": "Julia",
+        "project_name": "julia-test",
+        "project_description": "Julia test description",
+        "author_name": "SpeakinTelnet",
+        "author_email": "SpeakinTelnet@example.com",
+        "repository_provider": "codeberg.org",
+        "repository_namespace": "python-test",
+        "repo_url": "https://www.codeberg.org/SpeakinTelnet/julia-test",
+        "license_date": "2023",
+        "julia_include_docs": True,
+        "julia_module_name": "julia_test",
+        "julia_project_uuid": "bbfa0e73-1458-65bf-d411-d779008015e5",
+    }
+
