@@ -104,3 +104,17 @@ def rust_base_answers():
         "rust_include_benchmark": True,
     }
 
+
+@pytest.fixture
+def solidity_base_answers():
+    return {
+        "project_language": "Solidity",
+        "project_name": "solidity-test",
+        "project_description": "Solidity test description",
+        "author_name": "SpeakinTelnet",
+        "author_email": "SpeakinTelnet@example.com",
+        "repository_provider": "codeberg.org",
+        "repository_namespace": "solidity-test",
+        "repo_url": "https://www.codeberg.org/SpeakinTelnet/solidity-test",
+        "license_date": "2023",
+    }
