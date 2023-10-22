@@ -1,0 +1,21 @@
+---
+
+rust_targets:
+  help: what is the main target of the rust package
+  choices:
+    - Library
+    - Binary
+    - Other
+  type: str
+
+rust_include_examples:
+  help: Include a directory for examples?
+  type: bool
+  default: yes
+  when: "{{ project_language == 'Rust' }}"
+
+rust_include_benchmark:
+  help: include a directory for benchmark?
+  default: yes
+  type: bool
+  when: "{{ project_language == 'Rust' }}"

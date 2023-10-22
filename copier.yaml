@@ -73,10 +73,5 @@ license_date:
 ---
 !include copier_python.yaml
 
-##
-##---
-##!include copier_rust.yaml
-##
-##---
-##!include copier_solidity.yaml
-##
+---
+!include copier_rust.yaml

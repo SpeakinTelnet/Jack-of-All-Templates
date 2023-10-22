@@ -9,11 +9,6 @@
    :target: https://www.python.org/
 {%- endmacro %}
 
-{% macro rust_shield() -%}
-.. |rust-shield| image:: https://badgen.net/badge/Made%20with/%20Rust/black
-   :target: https://www.rust-lang.org/
-{%- endmacro %}
-
 {% macro julia_shield() -%}
 .. |julia-shield| image:: https://badgen.net/badge/Made%20with/%20Julia/green
    :target: https://julialang.org/
@@ -52,4 +47,12 @@
 {% macro bluestyle_shield() -%}
 .. |bluestyle-shield| image:: https://badgen.net/badge/Codestyle/Blue/blue
     :target: https://github.com/invenia/BlueStyle
+{%- endmacro %}
+
+{% macro md_rust_shield() -%}
+[![Made with Rust](https://badgen.net/badge/Made%20with/%20Rust/black)](https://www.rust-lang.org/)
+{%- endmacro %}
+
+{% macro md_mit_shield() -%}
+[![MIT License](https://badgen.net/static/license/MIT/blue)](LICENSE)
 {%- endmacro %}

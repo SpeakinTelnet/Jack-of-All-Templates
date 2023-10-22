@@ -1,0 +1,6 @@
+use {{ project_name|lower|replace(" ", "_")|replace(".", "_")|replace("-", "_") }};
+
+#[test]
+fn test_greeting() {
+    assert_eq!(String::from("hello from {{ project_name }}"), {{ project_name|lower|replace(" ", "_")|replace(".", "_")|replace("-", "_") }}::greet());
+}
