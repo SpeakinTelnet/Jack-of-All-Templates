@@ -86,3 +86,21 @@ def julia_base_answers():
         "julia_project_uuid": "bbfa0e73-1458-65bf-d411-d779008015e5",
     }
 
+
+@pytest.fixture
+def rust_base_answers():
+    return {
+        "project_language": "Rust",
+        "project_name": "rust-test",
+        "project_description": "Rust test description",
+        "author_name": "SpeakinTelnet",
+        "author_email": "SpeakinTelnet@example.com",
+        "repository_provider": "codeberg.org",
+        "repository_namespace": "rust-test",
+        "repo_url": "https://www.codeberg.org/SpeakinTelnet/rust-test",
+        "license_date": "2023",
+        "rust_targets": "Other",
+        "rust_include_examples": True,
+        "rust_include_benchmark": True,
+    }
+
