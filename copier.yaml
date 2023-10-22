@@ -27,7 +27,7 @@ project_name:
   default: "{{ project_language }}{% if project_language == 'Julia' %}.jl{% else %}-Boilerplate{% endif %}"
   help: 'Name for this project.'
   validator: >-
-      {% if not (project_name | regex_search('^(?![\.\-\_\ ])([A-Za-z0-9\ \-\_\.])+(?<![\.\-\_\ ])')) %}
+      {% if not (project_name | regex_search('^(?![\\.\\-\\_\\ ])([A-Za-z0-9\\ \\-\\_\\.])+(?<![\\.\\-\\_\\ ])')) %}
         Must only contain ASCII letters/digits, spaces, underscores, hyphens, and periods, and must begin and end with ASCII letters/digits
       {% endif %}
   type: str

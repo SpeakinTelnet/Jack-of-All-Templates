@@ -12,7 +12,7 @@ julia_module_name:
     Provide the module name for this project, in Julia this could translate to what's
     used in <]Add Module>
   validator: >-
-      {% if not (julia_module_name | regex_search('^[a-z][a-z0-9\_]+$')) %}
+      {% if not (julia_module_name | regex_search('^[a-z][a-z0-9\\_]+$')) %}
         Must be composed of these characters: (a-z, 0-9, _).
       {% endif %}
   type: str
