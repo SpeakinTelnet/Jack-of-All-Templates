@@ -9,27 +9,17 @@ description = "A simple and opiniated template aggregator for multiple languages
 readme = "README.rst"
 requires-python = ">=3.9"
 license = "MIT"
-keywords = [
-  "copier",
-  "development",
-  "project template",
-  ]
-authors = [
-  {name = "SpeakinTelnet", email = "gui.lac@protonmail.com"}
-  ]
-maintainers = [
-  {name = "SpeakinTelnet", email = "gui.lac@protonmail.com"}
-  ]
+keywords = ["copier", "development", "project template"]
+authors = [{ name = "SpeakinTelnet", email = "gui.lac@protonmail.com" }]
+maintainers = [{ name = "SpeakinTelnet", email = "gui.lac@protonmail.com" }]
 classifiers = [
   "Development Status :: 4 - Beta",
-  "Programming Language :: Python"
+  "Programming Language :: Python",
 ]
 dependencies = ["copier >= 8.3.0"]
 
 [project.optional-dependencies]
-test = [
-  "pytest >= 7.0"
-  ]
+test = ["pytest >= 7.0"]
 
 [tool.hatch.envs.test]
 features = ["test"]
@@ -41,19 +31,10 @@ python = ["3.9", "3.10", "3.11"]
 
 [tool.hatch.envs.lint]
 detached = true
-dependencies = [
-  "black>=23.9.0",
-  "ruff>=0.0.292",
-]
+dependencies = ["black>=23.9.0", "ruff>=0.0.292"]
 [tool.hatch.envs.lint.scripts]
-style = [
-  "ruff {args:tests}",
-  "black --check --diff {args:tests}",
-]
-fmt = [
-  "black {args:tests}",
-  "ruff --fix {args:tests}",
-]
+style = ["ruff {args:tests}", "black --check --diff {args:tests}"]
+fmt = ["black {args:tests}", "ruff --fix {args:tests}"]
 
 
 [project.urls]
@@ -66,41 +47,108 @@ line-length = 90
 [tool.ruff]
 # Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
 # "UP" "TRY" "PLR"
-select = ["E", "W", "F", "I", "N", "B", "BLE", "C", "D", "E", "F", "I", "N", "S", "T", "W", "RUF", "NPY", "PD", "PGH", "ANN", "C90", "PLC", "PLE", "PLW", "TCH"]
+select = [
+  "E",
+  "W",
+  "F",
+  "I",
+  "N",
+  "B",
+  "BLE",
+  "C",
+  "D",
+  "E",
+  "F",
+  "I",
+  "N",
+  "S",
+  "T",
+  "W",
+  "RUF",
+  "NPY",
+  "PD",
+  "PGH",
+  "ANN",
+  "C90",
+  "PLC",
+  "PLE",
+  "PLW",
+  "TCH",
+]
 ignore = [
-    "ANN002", "ANN003", "ANN101", "ANN102", "ANN204", "ANN401",
-    "S101", "S104",
-    "D105", "D106", "D107", "D200", "D203", "D212", "D415",
-    "PD011",
-    "PLW1510",
+  "ANN002",
+  "ANN003",
+  "ANN101",
+  "ANN102",
+  "ANN204",
+  "ANN401",
+  "S101",
+  "S104",
+  "D105",
+  "D106",
+  "D107",
+  "D200",
+  "D203",
+  "D212",
+  "D415",
+  "PD011",
+  "PLW1510",
 ]
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
-fixable = ["E", "W", "F", "I", "N", "B", "BLE", "C", "D", "E", "F", "I", "N", "S", "T", "W", "RUF", "NPY", "PD", "PGH", "ANN", "C90", "PL", "PLC", "PLE", "PLW", "TCH"]
+fixable = [
+  "E",
+  "W",
+  "F",
+  "I",
+  "N",
+  "B",
+  "BLE",
+  "C",
+  "D",
+  "E",
+  "F",
+  "I",
+  "N",
+  "S",
+  "T",
+  "W",
+  "RUF",
+  "NPY",
+  "PD",
+  "PGH",
+  "ANN",
+  "C90",
+  "PL",
+  "PLC",
+  "PLE",
+  "PLW",
+  "TCH",
+]
 unfixable = []
 
 # Exclude a variety of commonly ignored directories.
 exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".hg",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".pytype",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "venv",
 ]
 
 # Same as Black.
@@ -109,10 +157,36 @@ line-length = 90
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-typing-modules = ["typing", "types", "typing_extensions", "mypy", "mypy_extensions"]
+typing-modules = [
+  "typing",
+  "types",
+  "typing_extensions",
+  "mypy",
+  "mypy_extensions",
+]
 
 [tool.ruff.per-file-ignores]
-"tests/*" = ["S101", "PLR0913", "PLR0915", "PGH003", "ANN001", "ANN202", "ANN201", "PLR0912", "TRY301", "PLW0603", "PLR2004", "ANN101", "S106", "TRY201", "ANN003", "ANN002", "S105", "TRY003", "D103"]
+"tests/*" = [
+  "S101",
+  "PLR0913",
+  "PLR0915",
+  "PGH003",
+  "ANN001",
+  "ANN202",
+  "ANN201",
+  "PLR0912",
+  "TRY301",
+  "PLW0603",
+  "PLR2004",
+  "ANN101",
+  "S106",
+  "TRY201",
+  "ANN003",
+  "ANN002",
+  "S105",
+  "TRY003",
+  "D103",
+]
 "docs/conf.py" = ["I001", "E402"]
 "tests/**/__init__.py" = ["D104"]
 
