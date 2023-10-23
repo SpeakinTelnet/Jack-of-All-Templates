@@ -124,5 +124,5 @@ max-complexity = 10
 order-by-type = true
 
 [tool.pytest.ini_options]
-addopts = "-v -Wdefault"
 testpaths = "tests/"
+filterwarnings = ["ignore::DeprecationWarning:pydantic_core.*:"]
