@@ -1,0 +1,55 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: test-${{ github.head_ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUNBUFFERED: "1"
+  FORCE_COLOR: "1"
+
+jobs:
+  tests:
+    name: Unit testing
+    runs-on: ubuntu-latest
+    container: catthehacker/ubuntu:act-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: |
+            3.9
+            3.10
+            3.11
+      - name: Install Hatch
+        run: pip install --upgrade hatch
+      - name: Run tests
+        run: hatch run test:test
+
+  lints:
+    name: Lint check
+    runs-on: ubuntu-latest
+    container: catthehacker/ubuntu:act-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install Hatch
+        run: pip install --upgrade hatch
+
+      - name: Run lint tests
+        run: hatch run lint:style
