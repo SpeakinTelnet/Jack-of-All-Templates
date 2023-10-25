@@ -40,7 +40,7 @@ Prerequisite
 
 You will need ``Copier`` to use this template, it is recommended to install it using `pipx <https://pypa.github.io/pipx/installation/>`_.
 
-.. code-block::
+.. code-block:: console
     
     pipx install copier
 
@@ -49,13 +49,13 @@ Basic Usage
 
 Start by generating a blank project
 
-.. code-block::
+.. code-block:: console
 
     copier copy https://codeberg.org/SpeakinTelnet/Jack-of-All-Templates.git /path/to/project
 
 or 
 
-.. code-block::
+.. code-block:: console
 
     copier copy gh:SpeakinTelnet/Jack-of-All-Templates /path/to/project
 
@@ -76,21 +76,21 @@ Testing
 
 since this project is built around Hatch you will first need it
 
-.. code-block::
+.. code-block:: console
 
     pipx install hatch
 
 
 Then you can run tests using:
 
-.. code-block::
+.. code-block:: console
 
     hatch run test:test
     hatch run lint:style
 
 And for a quick lint using ``ruff``:
 
-.. code-block::
+.. code-block:: console
 
     hatch run lint:fmt
 
