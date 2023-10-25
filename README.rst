@@ -97,7 +97,7 @@ And for a quick lint using ``ruff``:
 License
 -------
 
-This project is licensed under the `MIT License <{{ repo_url }}/src/branch/main/LICENSE>`_
+This project is licensed under the `MIT License <https://codeberg.org/SpeakinTelnet/Jack-of-All-Templates/src/branch/main/LICENSE>`_
 
 
 ⊂(▀¯▀⊂)  `Donate <https://codeberg.org/SpeakinTelnet/.profile/src/branch/main/DONATE.rst>`_
