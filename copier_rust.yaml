@@ -8,6 +8,7 @@ rust_targets:
     - Binary
     - Other
   type: str
+  when: "{{ project_language == 'Rust' }}"
 
 rust_include_examples:
   help: Include a directory for examples?
